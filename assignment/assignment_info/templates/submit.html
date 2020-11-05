@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block content %}
+  {% if submitted %}
+    <h2>You have successfully submitted your assignment.</h2>
+  {% else %}
+  <h2>Submit your assignment</h2>
+  <form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" name="" value="Submit" class='btn btn-primary'>
+  </form>
+  {% endif %}
+{% endblock %}
