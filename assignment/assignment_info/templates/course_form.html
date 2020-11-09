@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block content %}
+  {% if created %}
+  <h2>Assignment has been created.</h2>
+  {% else %}
+  <h2>Create an assignment.</h2>
+  <form class=""  method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" name="" value="create" class="btn btn-warning">
+  </form>
+  {% endif %}
+{% endblock %}
